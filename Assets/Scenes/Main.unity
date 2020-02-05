@@ -141,6 +141,14 @@ PrefabInstance:
       propertyPath: m_Barrel
       value: 
       objectReference: {fileID: 2029087066}
+    - target: {fileID: 1788157621, guid: 0b8d546cb69ea5d4fac2452d7b133385, type: 3}
+      propertyPath: m_ReloadAction.actionPath
+      value: /actions/default/in/Teleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788157621, guid: 0b8d546cb69ea5d4fac2452d7b133385, type: 3}
+      propertyPath: m_AmmoOutput
+      value: 
+      objectReference: {fileID: 1105173032}
     - target: {fileID: 8022385303703002624, guid: 0b8d546cb69ea5d4fac2452d7b133385,
         type: 3}
       propertyPath: m_Name
@@ -389,7 +397,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1030890582
+--- !u!21 &799362688
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -423,13 +431,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1043213645 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8022385303703002628, guid: 0b8d546cb69ea5d4fac2452d7b133385,
-    type: 3}
-  m_PrefabInstance: {fileID: 89430603}
-  m_PrefabAsset: {fileID: 0}
---- !u!43 &1071232499
+--- !u!43 &1000469166
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -592,6 +594,24 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &1043213645 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8022385303703002628, guid: 0b8d546cb69ea5d4fac2452d7b133385,
+    type: 3}
+  m_PrefabInstance: {fileID: 89430603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1105173032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 460351390, guid: 0b8d546cb69ea5d4fac2452d7b133385,
+    type: 3}
+  m_PrefabInstance: {fileID: 89430603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1475068376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -938,7 +958,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6543475338812354267}
-  m_Mesh: {fileID: 1071232499}
+  m_Mesh: {fileID: 1000469166}
 --- !u!23 &6543475338810328189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -957,7 +977,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1030890582}
+  - {fileID: 799362688}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
