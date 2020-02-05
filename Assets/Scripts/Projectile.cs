@@ -22,16 +22,14 @@ public class Projectile : MonoBehaviour
     public void Launch(Blaster blaster)
     {
         // Position
-        // TODO: Setup with barrel
-        transform.position = blaster.transform.position;
-        transform.rotation = blaster.transform.rotation;
+        transform.position = blaster.m_Barrel.transform.position;
+        transform.rotation = blaster.m_Barrel.rotation;
 
         // Activate
         gameObject.SetActive(true);
 
         // Fire, and track
-        // TODO: Setup force
-        m_Rigidbody.AddRelativeForce(Vector3.forward * 10, ForceMode.Impulse);
+        m_Rigidbody.AddRelativeForce(Vector3.forward * blaster.m_Force, ForceMode.Impulse);
         StartCoroutine(TrackLifetime());
     }
 

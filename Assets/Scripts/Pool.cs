@@ -32,11 +32,11 @@ public class ProjectilePool : Pool
         m_Projectiles = Create<Projectile>(prefab, count);
     }
 
-    public void SetAllProjectiles(bool value)
+    public void SetAllProjectiles()
     {
         foreach(Projectile projectile in m_Projectiles)
         {
-            // TODO: Fill
+            projectile.SetInnactive();
         }
     }
 }
