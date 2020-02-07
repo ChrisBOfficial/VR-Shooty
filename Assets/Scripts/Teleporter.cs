@@ -11,7 +11,7 @@ public class Teleporter : MonoBehaviour
     private SteamVR_Behaviour_Pose m_Pose = null;
     private bool m_HasPosition = false;
     private bool m_IsTeleporting = false;
-    private float m_FadeTime = 0.0f;
+    private float m_FadeTime = 0.2f;
 
     private void Awake()
     {
