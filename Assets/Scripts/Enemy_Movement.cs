@@ -6,9 +6,12 @@ public class Enemy_Movement : MonoBehaviour
 {
 
 	public float speed = 3.0f;
-	public float obstacleRange = 5.0f;
+	public float obstacleRange = 4.0f;
 
 	private bool _alive;
+
+    public GameObject paintballPrefab;
+    private GameObject _paintball;
 
     // Start is called before the first frame update
     void Start()
@@ -20,16 +23,24 @@ public class Enemy_Movement : MonoBehaviour
     void Update()
     {
         if(_alive) {
-        	transform.Translate(0,0, speed * Time.deltaTime);
+        	transform.Translate(0, 0, speed * Time.deltaTime);
         }
 
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
         if(Physics.SphereCast(ray, 0.75f, out hit)) {
-        	if(hit.distance < obstacleRange) {
-        		float angle = Random.Range(-110, 110);
-        		transform.Rotate(0, angle, 0);
-        	}
+            GameObject hitObject = hit.transform.gameObject;
+            if(hitObject.GetComponent<playerInfo>()) {
+                if(_paintball == null) {
+                    _paintball = Instantiate(paintballPrefab) as GameObject;
+                    _paintball.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                    _paintball.transform.rotation = transform.rotation;
+                }
+            }
+            else if(hit.distance < obstacleRange) {
+                float angle = Random.Range(-110, 110);
+                transform.Rotate(0, angle, 0);
+            }
         }
 
     }
