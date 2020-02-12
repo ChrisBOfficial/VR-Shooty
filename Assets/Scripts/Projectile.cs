@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        SetInnactive();
+        // SetInnactive();
     }
 
     public void Launch(Blaster blaster)
