@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerInfo : MonoBehaviour
 {
@@ -9,13 +11,15 @@ public class playerInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    	_health = 10;
-        
+    	_health = 5;
     }
 
     public void Hurt(int damage) {
     	_health -= damage;
-    	Debug.Log("Health: " + _health);
+    	Debug.Log("Hit");
+    	if(_health <= 0) {
+    		Application.LoadLevel("GameOverScene");
+    	}
     }
 
 }
