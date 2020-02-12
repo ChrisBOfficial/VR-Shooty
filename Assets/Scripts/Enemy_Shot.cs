@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy_Shot : MonoBehaviour
 {
-
     public Color m_FlashDamageColor = Color.white;
 
     private MeshRenderer m_MeshRenderer = null;
@@ -12,6 +13,7 @@ public class Enemy_Shot : MonoBehaviour
 
     private int m_MaxHealth = 3;
     private int m_Health = 0;
+    private int score = 0;
 
     private void Awake()
     {
@@ -65,6 +67,10 @@ public class Enemy_Shot : MonoBehaviour
     {
         if (m_Health <= 0)
         {
+            score = score + 1;
+            if(score >= 2) {
+                    Application.LoadLevel("WinScreen");
+            }
         	Enemy_Movement behavior = GetComponent<Enemy_Movement>();
         	if(behavior != null) {
         		behavior.SetAlive(false);
