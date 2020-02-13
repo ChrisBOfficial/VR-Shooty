@@ -13,7 +13,7 @@ public class Enemy_Shot : MonoBehaviour
 
     private int m_MaxHealth = 3;
     private int m_Health = 0;
-    private int score = 0;
+    private static int score = 0;
 
     private void Awake()
     {
