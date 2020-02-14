@@ -27,8 +27,11 @@ public class Blaster : MonoBehaviour
     private Animator m_Animator = null;
     private ProjectilePool m_ProjectilePool = null;
 
+    private AudioSource gunshot;
+
     private void Awake()
     {
+    	gunshot = GetComponent<AudioSource>();
         m_Pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
         m_Animator = GetComponent<Animator>();
 
@@ -70,6 +73,8 @@ public class Blaster : MonoBehaviour
         {
             return;
         }
+
+        gunshot.Play();
 
         Projectile targetProjectile = m_ProjectilePool.m_Projectiles[m_FiredCount];
         targetProjectile.Launch(this);

@@ -13,9 +13,12 @@ public class Enemy_Movement : MonoBehaviour
     public GameObject paintballPrefab;
     private GameObject _paintball;
 
+    private AudioSource sound;
+
     // Start is called before the first frame update
     void Start()
     {
+        sound = GetComponent<AudioSource>();
         _alive = true;
     }
 
@@ -33,6 +36,7 @@ public class Enemy_Movement : MonoBehaviour
             if(hitObject.GetComponent<playerInfo>()) {
                 if(_paintball == null) {
                     _paintball = Instantiate(paintballPrefab) as GameObject;
+                    sound.Play();
                     _paintball.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
                     _paintball.transform.rotation = transform.rotation;
                 }
