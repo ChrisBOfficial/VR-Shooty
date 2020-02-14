@@ -68,7 +68,7 @@ public class Enemy_Shot : MonoBehaviour
         if (m_Health <= 0)
         {
             score = score + 1;
-            if(score >= 2) {
+            if(score >= 4) {
                     Application.LoadLevel("WinScreen");
             }
         	Enemy_Movement behavior = GetComponent<Enemy_Movement>();
